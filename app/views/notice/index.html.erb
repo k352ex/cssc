@@ -5,7 +5,7 @@
 	  	
 	  	<div class="panel panel-default">
   			<div class="panel-body">
-    			전체 공지
+    			학과 공지
   			</div>
 		</div>
 
@@ -19,7 +19,7 @@
 	        </tr>
 	  	</thead>
 	  	<tbody>
-          <% @post.each do |p| %>
+          <% @post.reverse.each do |p| %>
 	        <tr>
 	          <th scope="row"><%= p.id %></th>
 	          <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
@@ -63,4 +63,5 @@
     </div>
   </div>
 </div>
+
 
