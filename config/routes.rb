@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :index
-  resources :notice  
+  resources :notice 
+  resource  :posts 
+
 end

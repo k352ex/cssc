@@ -5,3 +5,8 @@
 $('#myModal').on 'shown.bs.modal', ->
   $('#myInput').focus()
   return
+
+
+$('#myAlert').on 'closed.bs.alert', ->
+  # do something…
+  return

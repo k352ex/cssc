@@ -13,7 +13,8 @@ class NoticeController < ApplicationController
 	    @post = Post.new(post_params)
 
 	    if @post.save
-	      redirect_to root_path
+	      flash[:notice] = "공지가 작성되었습니다."
+	      redirect_to notice_path(@post)
 	    else
 	      flash[:alert] = '실패'
 	      render 'new'
