@@ -1,65 +1,45 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <%= image_tag("brand.png", size: "120x30", alt: "원광대학교 컴퓨터공학과")%>
-          </a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">원광대학교 컴퓨터공학과</a> -->
-        </div>
-
-        <!-- 사이즈 줄었을 시 토글버튼으로 Nav변경 -->
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">전체공지</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">1학년</a></li>
-                <li><a href="#">2학년</a></li>
-                <li><a href="#">3학년</a></li>
-                <li><a href="#">4학년</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 게시판 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">1학년</a></li>
-                <li><a href="#">2학년</a></li>
-                <li><a href="#">3학년</a></li>
-                <li><a href="#">4학년</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./"> LOGIN <span class="sr-only">(current)</span></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-</nav>
-
 <div style="margin:80px"> </div>
-
+<!-- 
 <div class="jumbotron" id="MainJumbotron">
-  <h2> 안녕하세요. </h2>
-  <p> 컴퓨터공학과 학생 홈페이지 </p>
+  <h2> 원광대학교 컴퓨터공학과 </h2>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">가입하기</a></p>
-</div>
+</div> -->
+<!--
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag("carousel1.jpg") %>
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+       <%= image_tag("carousel2.jpeg", size:"1280x320") %> 
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("") %>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+-->
 
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
