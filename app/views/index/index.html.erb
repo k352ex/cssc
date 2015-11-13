@@ -17,8 +17,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">전체공지</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -32,10 +31,21 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 게시판 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">1학년</a></li>
+                <li><a href="#">2학년</a></li>
+                <li><a href="#">3학년</a></li>
+                <li><a href="#">4학년</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
             <li class="active"><a href="./"> LOGIN <span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -45,31 +55,72 @@
 <div style="margin:80px"> </div>
 
 <div class="jumbotron" id="MainJumbotron">
-  <h1> 안녕하세요. </h1>
+  <h2> 안녕하세요. </h2>
   <p> 컴퓨터공학과 학생 홈페이지 </p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">가입하기</a></p>
 </div>
 
+
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
-  <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>공지사항</th>
-            <th>작성일자</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
+  <div class="col-xs-12 col-md-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>전체공지</th>
+          <th>공지사항</th>
+          <th>작성일자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
-          </tr>
-        </tbody>
-  </table>    
+        </tr>
+      </tbody>
+    </table>    
+  </div>
+  <div class="col-xs-6 col-md-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>공지사항</th>
+          <th>작성일자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+      </tbody>
+    </table>    
+  </div>
 </div>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<!-- <div class="row">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+ -->
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<!-- <div class="row">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
+ -->
