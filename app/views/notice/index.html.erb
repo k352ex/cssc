@@ -1,5 +1,5 @@
 <!-- <div style="padding:50px;"> </div> -->
-<div class="row">
+<div class="row">  
   <div class="col-md-6 col-md-offset-3">
 	<table class="table">
 	  	
@@ -12,32 +12,54 @@
 	  	<!-- <caption class="NoticeAll"> 전체 공지 </caption> -->
 	  	<thead>
 	        <tr>
-	          <th>#</th>
-	          <th>First Name</th>
-	          <th>Last Name</th>
-	          <th>Username</th>
+	          <th>전체 공지</th>
+	          <th>제 목</th>
+	          <th>작성자</th>
+	          <th>작성 시간</th>
 	        </tr>
 	  	</thead>
 	  	<tbody>
+          <% @post.each do |p| %>
 	        <tr>
-	          <th scope="row">1</th>
-	          <td>Mark</td>
-	          <td>Otto</td>
-	          <td>@mdo</td>
+	          <th scope="row"><%= p.id %></th>
+	          <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
+	          <td> <%= p.author %> </td>
+	          <td> <%= p.updated_at %> </td>
 	        </tr>
-	        <tr>
-	          <th scope="row">2</th>
-	          <td>Jacob</td>
-	          <td>Thornton</td>
-	          <td>@fat</td>
-	        </tr>
-	        <tr>
-	          <th scope="row">3</th>
-	          <td>Larry</td>
-	          <td>the Bird</td>
-	          <td>@twitter</td>
-	        </tr>
+      	  <% end %>
 	  	</tbody>
 	</table>		
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">
+  공지 작성
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">공지 글 작성</h4>
+      </div>
+      <div class="modal-body">
+		<div style="width: 500px;margin: 0 auto;">
+			<%= form_for @post_new, class: "form-control", url: {action: "create"} do |f| %>
+			<p> <%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true %> </p>
+			<p>	<%= f.text_field :author, class: "form-control", placeholder: "작성자"  %> </p>
+			<p>	<%= f.text_area :content, size: "25x4" , class: "form-control" , placeholder: "내용" %> </p>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	    <%= f.submit "제출" , class: "btn btn-primary"%>
+		<% end %>
+      </div>
+    </div>
   </div>
 </div>
