@@ -22,7 +22,7 @@
             <%= link_to image_tag("brand.png", size: "120x30", alt: "원광대학교 컴퓨터공학과"), root_path, :class => "navbar-brand" %>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar"> </span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
@@ -34,6 +34,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><%= link_to "전체공지", notice_index_path %></li>
+            <li><a href="#"> 자유게시판</a> </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -58,13 +59,19 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><%= link_to "Login", new_user_session_path %><span class="sr-only">(current)</span> </li>
+            <% if user_signed_in? %>
+             <li> <a href="#"> <%= current_user.username %> 님</a> </li>
+            <% end %> 
+            <% unless current_user %>
+              <li><%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
+            <% else %>
+              <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
 </nav>
 <div style="margin:80px"> </div>
-
 </head>
 <body>
 

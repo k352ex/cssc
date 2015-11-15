@@ -41,9 +41,36 @@
 </div>
 -->
 
-
-<div class="row">
+<div class="row" style="margin:20px;">
   <div class="col-xs-12 col-md-6">
+    <div class="well well-sm">
+      전체 공지사항
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>글 번호</th>
+          <th>공지사항</th>
+          <th>작성자 </th>
+          <th>작성일자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @post.reverse.each do |p| %>
+        <tr>
+          <th scope="row"> <%= p.id %> </th>
+            <td> <%= p.title %> </td>
+            <td> <%= p.author %></td>
+            <td> <%= p.updated_at %> </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+    <div class="col-xs-12 col-md-6">
+    <div class="well well-sm">
+      자유 게시판
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
