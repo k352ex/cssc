@@ -41,13 +41,13 @@
 </div>
 -->
 
-<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+
 <div class="row">
   <div class="col-xs-12 col-md-6">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>학과공지</th>
+          <th>글 번호</th>
           <th>공지사항</th>
           <th>작성자 </th>
           <th>작성일자</th>
@@ -65,41 +65,33 @@
       </tbody>
     </table>    
   </div>
-<!--   <div class="col-xs-6 col-md-6">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>공지사항</th>
-          <th>작성일자</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-      </tbody>
-    </table>    
-  </div>
- --></div>
+ </div>
 
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<!-- <div class="row">
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
- -->
-<!-- Columns are always 50% wide, on mobile and desktop -->
-<!-- <div class="row">
-  <div class="col-xs-6">.col-xs-6</div>
-  <div class="col-xs-6">.col-xs-6</div>
-</div>
- -->
+<!-- 
+<div class="row">
+        <div class="col-xs-6 col-sm-4"></div>
+        <div class="col-xs-6 col-sm-4">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>학과공지</th>
+                <th>공지사항</th>
+                <th>작성자 </th>
+                <th>작성일자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @post.reverse.each do |p| %>
+              <tr>
+                <th scope="row"> <%= p.id %> </th>
+                  <td> <%= p.title %> </td>
+                  <td> <%= p.author %></td>
+                  <td> <%= p.updated_at %> </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>    
+        </div>
+        <div class="col-xs-6 col-sm-4"></div>
+</div>   -->
+
