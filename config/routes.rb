@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :index
   resources :notice 
-  resource  :posts 
+  resources :posts
+  resources :freeboard
 
 end
