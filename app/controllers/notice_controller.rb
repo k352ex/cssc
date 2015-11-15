@@ -22,7 +22,7 @@ class NoticeController < ApplicationController
 	 end
 
 	def show
-		@post = Post.all
+		@post = Post.find(params[:id])
 	end
 
  	def update

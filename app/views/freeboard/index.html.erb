@@ -1,13 +1,12 @@
-<div style="padding:50px;"> </div>
+<div style="padding:20px;"> </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 	<table class="table">
-
 	  	<div class="panel panel-default">
-  			<div class="panel-body">
-    			자유 게시판
+  			<div class="panel-body" style="font-size:20px;">
+    			 자유 게시판
   			</div>
-		</div>
+		  </div>
 
 	  	<!-- <caption class="NoticeAll"> 전체 공지 </caption> -->
 	  	<thead>
@@ -22,7 +21,7 @@
           <% @freeboard.reverse.each do |p| %>
 	        <tr>
 	          <th scope="row"><%= p.id %></th>
-	          <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
+	          <td> <%= link_to "#{p.title}", freeboard_path(p.id) %> </td>
 	          <td> <%= p.author %> </td>
 	          <td> <%= p.updated_at %> </td>
 	        </tr>

@@ -3,8 +3,9 @@ class CreateFreeboards < ActiveRecord::Migration
     create_table :freeboards do |t|
 
       t.string :title
-      t.string :context
+      t.string :content
       t.string :author
+      # t.string :body
 
       t.timestamps null: false
     end
