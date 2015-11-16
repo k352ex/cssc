@@ -14,11 +14,14 @@
  *= require_self
  */
 
-
+#navbarCustom {
+  margin: 0px;
+}
 
  #footer {
    background-color: #2b2b2b;
    color: #fff;
+   text-align:center;
  }
 
 footer > h4 {
