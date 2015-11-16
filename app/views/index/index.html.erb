@@ -59,9 +59,9 @@
         <% @post.reverse.each do |p| %>
         <tr>
           <th scope="row"> <%= p.id %> </th>
-            <td> <%= p.title %> </td>
+            <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
             <td> <%= p.author %></td>
-            <td> <%= p.updated_at %> </td>
+            <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
         </tr>
         <% end %>
       </tbody>
@@ -86,38 +86,10 @@
           <th scope="row"> <%= p.id %> </th>
             <td> <%= p.title %> </td>
             <td> <%= p.author %></td>
-            <td> <%= p.updated_at %> </td>
+            <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
  </div>
-
-<!--
-<div class="row">
-        <div class="col-xs-6 col-sm-4"></div>
-        <div class="col-xs-6 col-sm-4">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>학과공지</th>
-                <th>공지사항</th>
-                <th>작성자 </th>
-                <th>작성일자</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @post.reverse.each do |p| %>
-              <tr>
-                <th scope="row"> <%= p.id %> </th>
-                  <td> <%= p.title %> </td>
-                  <td> <%= p.author %></td>
-                  <td> <%= p.updated_at %> </td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-xs-6 col-sm-4"></div>
-</div>   -->

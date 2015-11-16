@@ -1,5 +1,8 @@
-<div style="padding:30px;"> </div>
-
+<ol class="breadcrumb" style="padding:10px; font-size:20px">
+  <li><a href="#">공지사항</a></li>
+  <li><a href="#">Index</a></li>
+  <li class="active">New</li>
+</ol>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @post, class: "form-control", url: {action: "create"} do |f| %>
