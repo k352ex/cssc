@@ -1,7 +1,16 @@
-<%= form_for @post, class: "form-control", url: {action: "create"} do |f| %>
-<%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true %>
-<%= f.text_field :author, class: "form-control", placeholder: "작성자"  %>
-<!-- <%= f.text_area :content, size: "25x4" , class: "form-control" , placeholder: "내용" %> -->
-<%= f.cktext_area :content, rows: 10 %>
-<%= f.submit "제출", class: "btn btn-default" %>
-<% end %>
+<div style="padding:30px;"> </div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @post, class: "form-control", url: {action: "create"} do |f| %>
+    <%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true %>
+    <%= f.text_field :author, class: "form-control", placeholder: "작성자"  %>
+    <!-- <%= f.text_area :content, size: "25x4" , class: "form-control" , placeholder: "내용" %> -->
+    <%= f.cktext_area :content, rows: 10 %>
+    <div class="pull-right">
+      <%= link_to("뒤로 가기", :back, class: "btn btn-default", role: "button") %>
+      <%= f.submit "제출", class: "btn btn-default" %>
+    </div>
+    <% end %>
+  </div>
+</div>

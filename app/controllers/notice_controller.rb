@@ -27,7 +27,7 @@ class NoticeController < ApplicationController
 
  	def update
 
-  	end
+	end
 
 	private
 

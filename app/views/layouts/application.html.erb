@@ -61,9 +61,10 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
              <li> <a href="#"> <%= current_user.username %> 님</a> </li>
-            <% end %> 
+            <% end %>
             <% unless current_user %>
               <li><%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
+              <li> <%= link_to("회원가입", new_user_registration_path) %> </li>
             <% else %>
               <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
             <% end %>
