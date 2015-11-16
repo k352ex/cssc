@@ -1,3 +1,17 @@
 // Place all the styles related to the freeboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel-body {
+	padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 3px;
+	background: white;
+	color: black;
+}
+
+a {
+	color: rgb(6, 6, 6);
+}

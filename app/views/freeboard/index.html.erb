@@ -1,14 +1,12 @@
-<div style="padding:50px;"> </div>
+<div style="padding:10px;"> </div>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
 	<table class="table">
 	  	<div class="panel panel-default">
   			<div class="panel-body">
     			 자유 게시판
   			</div>
 		  </div>
-
-	  	<!-- <caption class="NoticeAll"> 전체 공지 </caption> -->
 	  	<thead>
 	        <tr>
 	          <th>전체 공지</th>
@@ -18,18 +16,18 @@
 	        </tr>
 	  	</thead>
 	  	<tbody>
-          <% @freeboard.reverse.each do |p| %>
+          <% @freeboard.last(5).reverse.each do |p| %>
 	        <tr>
 	          <th scope="row"><%= p.id %></th>
 	          <td> <%= link_to "#{p.title}", freeboard_path(p.id) %> </td>
 	          <td> <%= p.author %> </td>
-	          <td> <%= p.updated_at %> </td>
+	          <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
 	        </tr>
       	  <% end %>
 	  	</tbody>
 	</table>
     <div class="pull-right">
-  	   <%= link_to("글 쓰기", new_freeboard_path, class: "btn btn-default", role: "button") %>
+  	   <%= link_to("글 작성", new_freeboard_path, class: "btn btn-default", role: "button") %>
    </div>
   </div>
 </div>

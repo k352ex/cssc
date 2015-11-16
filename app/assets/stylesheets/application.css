@@ -16,13 +16,16 @@
 
 #navbarCustom {
   margin: 0px;
+  position:relative;
+  height:50px;
 }
 
  #footer {
    background-color: #2b2b2b;
    color: #fff;
    text-align:center;
- }
+   position: relative;
+}
 
 footer > h4 {
   color: #fff;
