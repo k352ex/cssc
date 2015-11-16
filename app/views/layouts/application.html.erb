@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   	<!-- bootstrap CDN -->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -51,10 +52,6 @@
                 <li><a href="#">2학년</a></li>
                 <li><a href="#">3학년</a></li>
                 <li><a href="#">4학년</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
           </ul>
@@ -78,7 +75,6 @@
   <%= yield %>
 
   <div style="padding:30px"></div>
-
   <footer id="footer">
     <div class="container">
         <div class="row">
@@ -94,8 +90,8 @@
             <div class="col-xs-6 col-md-3 column">
                 <h4>Follow Us</h4>
                 <ul class="nav">
-                    <li><a href="#">페이스북 컴퓨터공학과 페이지</a></li>
-                    <li><a href="#">인스타그램</a></li>
+                    <li><%= link_to "Facebook 컴퓨터공학과 페이지", root_path %> </li>
+                    <li><a href="#">인스타그램</a> </li>
                     <li><a href="#">Google+</a></li>
                     <li><a href="#">Pinterest</a></li>
                 </ul>
@@ -103,7 +99,7 @@
             <div class="col-xs-6 col-md-3 column">
                 <h4>Contact Us</h4>
                 <ul class="nav">
-                    <li><a href="#">이메일</a></li>
+                    <li><a href="#">E-mail</a></li>
                     <li><a href="#">Headquarters</a></li>
                     <li><a href="#">Management</a></li>
                     <li><a href="#">Support</a></li>

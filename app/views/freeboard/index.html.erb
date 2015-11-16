@@ -14,7 +14,7 @@
 	          <th>전체 공지</th>
 	          <th>제 목</th>
 	          <th>작성자</th>
-	          <th>작성 시간</th>
+	          <th>작성 일자</th>
 	        </tr>
 	  	</thead>
 	  	<tbody>
@@ -28,6 +28,8 @@
       	  <% end %>
 	  	</tbody>
 	</table>
-  	<%= link_to("글 쓰기", new_freeboard_path, class: "btn btn-default", role: "button") %>
+    <div class="pull-right">
+  	   <%= link_to("글 쓰기", new_freeboard_path, class: "btn btn-default", role: "button") %>
+   </div>
   </div>
 </div>

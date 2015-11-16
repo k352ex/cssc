@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :freeboard
 
+  # WillPaginateExample::Application.routes.draw do
+  #   resources :notice, only: [:index]
+  #   root to: "notice#index"
+  # end
 end

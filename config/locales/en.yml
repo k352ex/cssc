@@ -21,8 +21,3 @@
 
 en:
   hello: "Hello world"
-
- en:
-    time:
-      formats:
-        sample: '%d.%m.%Y'
