@@ -1,6 +1,7 @@
 <div style="padding:10px;"> </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+
 	<table class="table">
 	  	<div class="panel panel-default">
   			<div class="panel-body">
@@ -8,6 +9,7 @@
   			</div>
 		</div>
 	  	<!-- <caption class="NoticeAll"> 전체 공지 </caption> -->
+
 	  	<thead>
 	        <tr>
 	          <th>전체 공지</th>
@@ -16,19 +18,18 @@
 	          <th>작성 일자</th>
 	        </tr>
 	  	</thead>
-	  	<tbody>
-          <% @post.last(5).reverse.each do |p| %>
-	        <tr>
-	          <th scope="row"> <%= p.id %></th>
-	          <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
-	          <td> <%= p.author %> </td>
-	          <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
-	        </tr>
-      	  <% end %>
+	  	<tbody id="post">
+          <%= render :partial => 'notice/post' %>
 	  	</tbody>
     </table>
     <div class="pull-right">
       <%= link_to("글 작성", new_notice_path, class: "btn btn-default", role: "button") %>
+    </div>
+    <div class="text-center paginator">
+      <%= paginate @post %>
+    </div>
+    <div id="counter"class="pagination_count text-center">
+      <%= page_entries_info @post, :remote => true %>
     </div>
   </div>
 </div>

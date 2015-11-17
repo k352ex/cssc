@@ -6,17 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+   <!-- 마테리얼라이즈 CDN -->
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> -->
+
+   <!-- 부트스트랩 CDN -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  	<!-- bootstrap CDN -->
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"> </script>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous">
-	</script>
+  <!-- 상단 Navigation -->
 	<nav class="navbar navbar-default" id="navbarCustom"> <!--  navbar-fixed-top -->
       <div class="container">
         <div class="navbar-header">
@@ -27,10 +28,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- <a class="navbar-brand" href="#">원광대학교 컴퓨터공학과</a> -->
         </div>
 
-        <!-- 사이즈 줄었을 시 토글버튼으로 Nav변경 -->
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
@@ -71,56 +70,55 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-</nav>
-<!-- <div style="margin:50px"> </div> -->
+    </nav>
 </head>
+
 <body>
   <%= yield %>
-
-  <div style="padding:30px"></div>
-  <footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3 column">
-                <h4>Information</h4>
-                <ul class="nav">
-                    <li><a href="http://www.wku.ac.kr/">원광대학교 홈페이지</a></li>
-                    <li><a href="http://intra.wku.ac.kr/">웹정보서비스</a></li>
-                    <li><a href="http://wvu.wku.ac.kr/">e-class</a></li>
-                    <li><a href="http://library.wku.ac.kr/">중앙도서관</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 column">
-                <h4>Follow Us</h4>
-                <ul class="nav">
-                    <li><%= link_to "Facebook 컴퓨터공학과 페이지", root_path %> </li>
-                    <li><a href="#">인스타그램</a> </li>
-                    <li><a href="#">Google+</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 column">
-                <h4>Contact Us</h4>
-                <ul class="nav">
-                    <li><a href="#">E-mail</a></li>
-                    <li><a href="#">Headquarters</a></li>
-                    <li><a href="#">Management</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 column">
-                <h4>Customer Service</h4>
-                <ul class="nav">
-                    <li><a href="#">공과대학</a></li>
-                    <li><a href="#">컴퓨터공학과 사무실</a></li>
-                    <li><a href="#">학생회장</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
-        </div>
-        <!--/row-->
-        <p class="text-center">©20143057 컴퓨터공학과 박민기</p>
-    </div>
-</footer>
 </body>
+
+<footer id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 column">
+              <h4>Information</h4>
+              <ul class="nav">
+                  <li><a href="http://www.wku.ac.kr/">원광대학교 홈페이지</a></li>
+                  <li><a href="http://intra.wku.ac.kr/">웹정보서비스</a></li>
+                  <li><a href="http://wvu.wku.ac.kr/">e-class</a></li>
+                  <li><a href="http://library.wku.ac.kr/">중앙도서관</a></li>
+              </ul>
+          </div>
+          <div class="col-xs-12 col-md-3 column">
+              <h4>Follow Us</h4>
+              <ul class="nav">
+                  <li><%= link_to "Facebook 컴퓨터공학과 페이지", root_path %> </li>
+                  <li><a href="#">인스타그램</a> </li>
+                  <li><a href="#">Google+</a></li>
+                  <li><a href="#">Pinterest</a></li>
+              </ul>
+          </div>
+          <div class="col-xs-12 col-md-3 column">
+              <h4>Contact Us</h4>
+              <ul class="nav">
+                  <li><a href="#">E-mail</a></li>
+                  <li><a href="#">Headquarters</a></li>
+                  <li><a href="#">Management</a></li>
+                  <li><a href="#">Support</a></li>
+              </ul>
+          </div>
+          <div class="col-xs-12 col-md-3 column">
+              <h4>Customer Service</h4>
+              <ul class="nav">
+                  <li><a href="#">공과대학</a></li>
+                  <li><a href="#">컴퓨터공학과 사무실</a></li>
+                  <li><a href="#">학생회장</a></li>
+                  <li><a href="#">Terms &amp; Conditions</a></li>
+              </ul>
+          </div>
+      </div>
+      <p class="text-center">©20143057 컴퓨터공학과 박민기</p>
+  </div>
+</footer>
+
 </html>

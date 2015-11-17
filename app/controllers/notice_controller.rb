@@ -1,8 +1,7 @@
 class NoticeController < ApplicationController
 	def index
 		@post_new = Post.new
-		@post = Post.all
-
+		@post = Post.all.order('created_at DESC').page(params[:page]).per(5)
 	end
 
 	def new
@@ -12,7 +11,6 @@ class NoticeController < ApplicationController
 	def create
 		  @post = Post.new(post_params)
 			@post.user_id = params[:user_id]
-			@post = current_user.posts.new(params[:post])
 	    if @post.save
 	      flash[:notice] = "공지가 작성되었습니다."
 	      redirect_to notice_path(@post)
