@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :index
   resources :notice
-  resources :posts
   resources :freeboard
 
   # WillPaginateExample::Application.routes.draw do

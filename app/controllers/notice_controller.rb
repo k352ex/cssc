@@ -34,7 +34,8 @@ class NoticeController < ApplicationController
 		@post = Post.find(params[:id])
 
  		if @post.update(post_params)
-	 		redirect_to @post
+			flash[:notice] = "수정이 완료되었습니다."
+	 		redirect_to notice_path(@post)
  		else
 	 		render 'edit'
  		end
