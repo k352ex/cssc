@@ -27,7 +27,10 @@
         <%= raw @post.content  %>
       </div>
     </div>
+    <% if current_user.id == @post.user_id %>
+    <div class="pull-right">
+      <%= link_to("Edit", edit_notice_path(@post), class: "btn btn-default") %>
+    </div>
+    <% end %>
   </div>
 </div>
-
-<div style="padding:90px;"> </div>

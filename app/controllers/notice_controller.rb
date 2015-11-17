@@ -11,6 +11,7 @@ class NoticeController < ApplicationController
 
 	def create
 	    @post = Post.new(post_params)
+			@post.user_id = params[:user_id]
 
 	    if @post.save
 	      flash[:notice] = "공지가 작성되었습니다."
@@ -25,8 +26,18 @@ class NoticeController < ApplicationController
 		@post = Post.find(params[:id])
 	end
 
- 	def update
+	def edit
+		@post = Post.find(params[:id])
+	end
 
+ 	def update
+		@post = Post.find(params[:id])
+
+ 		if @post.update(post_params)
+	 		redirect_to @post
+ 		else
+	 		render 'edit'
+ 		end
 	end
 
 	private

@@ -5,7 +5,7 @@ class CreateFreeboards < ActiveRecord::Migration
       t.string :title
       t.string :content
       t.string :author
-      # t.string :body
+      t.integer :user_id
 
       t.timestamps null: false
     end

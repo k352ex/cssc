@@ -5,7 +5,9 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title # 제목
       t.string :content # 내용
       t.string :author # 작성자
-       
+
+      t.integer :user_id
+
       t.timestamps null: false
     end
   end

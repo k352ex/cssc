@@ -1,13 +1,32 @@
-<% if flash[:notice] %>
-  <div class="notice">
-  <div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-      <%= flash[:notice] %>
+<div style="padding:20px"> </div>
+
+<div class="row">
+  <% if flash[:notice] %>
+    <div class="notice">
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        <%= flash[:notice] %>
+      </div>
     </div>
+  <% end %>
+
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= raw @freeboard.title %></h3>
+      </div>
+      <div class="panel-body">
+        <%= raw @freeboard.content  %>
+      </div>
+    </div>
+    <% if current_user.id == @freeboard.user_id %>
+    <div class="pull-right">
+      <%= link_to("Edit", edit_freeboard_path(@freeboard), class: "btn btn-default") %>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
-
-<div style="padding:30px"> </div>
+<div style="padding:90px;"> </div>
