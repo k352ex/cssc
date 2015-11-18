@@ -4,5 +4,5 @@ class IndexController < ApplicationController
 		@post = Post.all.last(5)
 		@freeboard = Freeboard.all.last(5)
 	end
-	
+
 end

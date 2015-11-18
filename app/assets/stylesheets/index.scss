@@ -5,3 +5,36 @@
 .carousel-caption {
  	background: rgba(0, 0, 0, 0.8);
 }
+
+#carousel_body {
+  padding: 0px;
+}
+
+#carousel-example-generic {
+  height: 100%;
+}
+
+@media (max-width: 678px) {
+  #carousel-example-generic {
+    height: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  #carousel-example-generic {
+    height: 100%;
+  }
+}
+
+#carousel {
+  width:100%;
+}
+
+
+#alert {
+  margin: 0 auto;
+}
+
+#MainNotice {
+  width: 100%;
+}

@@ -14,9 +14,14 @@
  *= require_self
  */
 
+head, body {
+  width: 100%;
+  margin: 0 auto;
+}
+
 #navbarCustom {
   margin: 0px;
-  position:relative;
+  /*position:relative;*/
   z-index: 10000;
 }
 
