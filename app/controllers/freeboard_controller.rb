@@ -1,7 +1,8 @@
 class FreeboardController < ApplicationController
+  before_action :authenticate_user!
 
 	def index
-		@freeboard = Freeboard.all
+    @freeboard = Freeboard.all.order('created_at DESC').page(params[:page]).per(5)
 	end
 
 	def show

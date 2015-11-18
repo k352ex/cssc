@@ -1,6 +1,8 @@
 class NoticeController < ApplicationController
+  before_action :authenticate_user!
+
 	def index
-		@post_new = Post.new
+		# @post_new = Post.new
 		@post = Post.all.order('created_at DESC').page(params[:page]).per(10)
 	end
 

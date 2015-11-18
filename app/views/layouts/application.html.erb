@@ -11,110 +11,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"> </script>
+  <%= render "layouts/header" %>
 
-  <!-- 상단 Navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" id="navbarCustom"> <!--  navbar-fixed-top -->
-      <div class="container">
-        <div class="navbar-header">
-            <%= link_to image_tag("brand.png", size: "120x30", alt: "원광대학교 컴퓨터공학과"), root_path, :class => "navbar-brand" %>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"> </span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><%= link_to "전체공지", notice_index_path %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">1학년</a></li>
-                <li><a href="#">2학년</a></li>
-                <li><a href="#">3학년</a></li>
-                <li><a href="#">4학년</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 게시판 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">1학년</a></li>
-                <li><a href="#">2학년</a></li>
-                <li><a href="#">3학년</a></li>
-                <li><a href="#">4학년</a></li>
-              </ul>
-            </li>
-          <li><%= link_to "자유게시판", freeboard_index_path %> </li>
-          <li><%= link_to "공모전", root_path %> </li>
-          <li><%= link_to "News", root_path %> </li>
-        </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-             <li> <a href="#"> <%= current_user.username %> 님</a> </li>
-            <% end %>
-            <% unless current_user %>
-              <li><%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
-              <li> <%= link_to("회원가입", new_user_registration_path) %> </li>
-            <% else %>
-              <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <div style="padding:25px"></div>
 </head>
 
 <body>
   <%= yield %>
+  <%= render "layouts/footer" %>
 </body>
-
-<footer id="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3 column">
-              <h4>Information</h4>
-              <ul class="nav">
-                  <li><a href="http://www.wku.ac.kr/">원광대학교 홈페이지</a></li>
-                  <li><a href="http://intra.wku.ac.kr/">웹정보서비스</a></li>
-                  <li><a href="http://wvu.wku.ac.kr/">e-class</a></li>
-                  <li><a href="http://library.wku.ac.kr/">중앙도서관</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-12 col-md-3 column">
-              <h4>Follow Us</h4>
-              <ul class="nav">
-                  <li><%= link_to "Facebook 컴퓨터공학과 페이지", root_path %> </li>
-                  <li><a href="#">인스타그램</a> </li>
-                  <li><a href="#">Google+</a></li>
-                  <li><a href="#">Pinterest</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-12 col-md-3 column">
-              <h4>Contact Us</h4>
-              <ul class="nav">
-                  <li><a href="#">E-mail</a></li>
-                  <li><a href="#">Headquarters</a></li>
-                  <li><a href="#">Management</a></li>
-                  <li><a href="#">Support</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-12 col-md-3 column">
-              <h4>Customer Service</h4>
-              <ul class="nav">
-                  <li><a href="#">공과대학</a></li>
-                  <li><a href="#">컴퓨터공학과 사무실</a></li>
-                  <li><a href="#">학생회장</a></li>
-                  <li><a href="#">Terms &amp; Conditions</a></li>
-              </ul>
-          </div>
-      </div>
-      <p class="text-center">©20143057 컴퓨터공학과 박민기</p>
-  </div>
-</footer>
-
 </html>

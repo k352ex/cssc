@@ -1,0 +1,55 @@
+<!-- 상단 Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" id="navbarCustom"> <!--  navbar-fixed-top -->
+    <div class="container">
+      <div class="navbar-header">
+          <%= link_to image_tag("brand.png", size: "120x30", alt: "원광대학교 컴퓨터공학과"), root_path, :class => "navbar-brand" %>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%= 'active' if params[:controller] == 'index' %>"> <%= link_to "Home", root_path %> </li>
+          <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체공지", notice_index_path %> </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">1학년</a></li>
+              <li><a href="#">2학년</a></li>
+              <li><a href="#">3학년</a></li>
+              <li><a href="#">4학년</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 게시판 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">1학년</a></li>
+              <li><a href="#">2학년</a></li>
+              <li><a href="#">3학년</a></li>
+              <li><a href="#">4학년</a></li>
+            </ul>
+          </li>
+        <li class="<%= 'active' if params[:controller] == 'freeboard' %>"><%= link_to "자유게시판", freeboard_index_path, class: "nav_component" %> </li>
+        <li class="<%= 'active' if params[:controller] == 'gather' %>"><%= link_to "공모전", root_path, class: "nav_component" %> </li>
+        <li class="<%= 'active' if params[:controller] == 'News' %>"><%= link_to "News", root_path, class: "nav_component" %> </li>
+      </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+           <li> <a href="#"> <%= current_user.username %> 님</a> </li>
+          <% end %>
+          <% unless current_user %>
+            <li><%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
+            <li> <%= link_to("회원가입", new_user_registration_path) %> </li>
+          <% else %>
+            <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div style="padding:25px"></div>

@@ -1,33 +1,34 @@
 <div style="padding:10px;"> </div>
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-	<table class="table">
-	  	<div class="panel panel-default">
-  			<div class="panel-body">
-    			 자유 게시판
-  			</div>
-		  </div>
-	  	<thead>
-	        <tr>
-	          <th>전체 공지</th>
-	          <th>제 목</th>
-	          <th>작성자</th>
-	          <th>작성 일자</th>
-	        </tr>
-	  	</thead>
-	  	<tbody>
-          <% @freeboard.last(5).reverse.each do |p| %>
-	        <tr>
-	          <th scope="row"><%= p.id %></th>
-	          <td> <%= link_to "#{p.title}", freeboard_path(p.id) %> </td>
-	          <td> <%= p.author %> </td>
-	          <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
-	        </tr>
-      	  <% end %>
-	  	</tbody>
-	</table>
-    <div class="pull-right">
-  	   <%= link_to("글 작성", new_freeboard_path, class: "btn btn-default", role: "button") %>
-   </div>
+<div class="container" style="height:600px">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+  	<table class="table">
+  	  	<div class="panel panel-default">
+    			<div class="panel-body">
+      			 자유 게시판
+    			</div>
+  		  </div>
+  	  	<thead>
+  	        <tr>
+  	          <th>전체 공지</th>
+  	          <th>제 목</th>
+  	          <th>작성자</th>
+  	          <th>작성 일자</th>
+  	        </tr>
+  	  	</thead>
+  	  	<tbody id="freeboard">
+            <%= render :partial => 'freeboard/freeboard' %>
+  	  	</tbody>
+  	</table>
+      <div class="pull-right">
+    	   <%= link_to("글 작성", new_freeboard_path, class: "btn btn-default", role: "button") %>
+     </div>
+     <div class="text-center paginator">
+       <%= paginate @freeboard %>
+     </div>
+     <div id="counter"class="pagination_count text-center">
+       <%= page_entries_info @freeboard, :remote => true %>
+     </div>
+    </div>
   </div>
 </div>
