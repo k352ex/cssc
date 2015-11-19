@@ -1,3 +1,13 @@
-<% @comment.each do |c| %>
-  <p> <%= c.content %> </p>
+<div style="padding:10px"> </div>
+
+<% @comment.reverse.each do |c| %>
+<% if c.post_id == @post.id %>
+  <blockquote style="text-align:left">
+          <p> <%= c.content %> </p>
+          <% @user.each do |u| if u.id == c.user_id %>
+          <footer> <%= u.grade %> 학년 <%= u.username %>  <%= c.created_at %></footer>
+        <% end %>
+      <% end %>
+    <% end %>
+  </blockquote>
 <% end %>

@@ -1,8 +1,6 @@
-<div>
-  <%= form_for @comments, :url => comments_path(@comments), :action => "create", :html => {:method => :post} do |f| %>
-    <%= f.text_field :content , class: "form-control", placeholder: "댓글", :required => false, autofocus: true %>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
-    <%= hidden_field_tag(:post_id, @post.id) %>
-    <%= f.submit "제출", class: "btn btn-default" %>
-  <% end %>
-</div>
+<%= form_for @comments, :url => comments_path(@comments), :action => "create", :html => {:class => "form-inline", :method => :post} do |f| %>
+  <%= f.text_field :content , class: "form-control", id: "comment_input", placeholder: "댓글", :required => false, autofocus: true %>
+  <%= hidden_field_tag(:user_id, current_user.id) %>
+  <%= hidden_field_tag(:post_id, @post.id) %>
+  <%= f.submit "제출", class: "btn btn-default" %>
+<% end %>

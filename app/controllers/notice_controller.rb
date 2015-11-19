@@ -47,6 +47,6 @@ class NoticeController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :content, :author)
+		params.require(:post).permit(:title, :content, :author, :grade)
 	end
 end

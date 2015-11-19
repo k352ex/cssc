@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151119011354) do
     t.string   "title"
     t.string   "content"
     t.string   "author"
+    t.integer  "grade"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
