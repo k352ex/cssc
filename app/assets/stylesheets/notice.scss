@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#panel-heading {
+		color: white;
+		background: rgba(0, 0, 0, 0.41);
+}
 
 .panel-body {
 	padding-top: 8px;

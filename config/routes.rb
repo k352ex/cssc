@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   resources :index
   resources :notice
   resources :freeboard
+  resources :comments
 
-  # WillPaginateExample::Application.routes.draw do
-  #   resources :notice, only: [:index]
-  #   root to: "notice#index"
-  # end
 end
