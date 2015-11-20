@@ -1,13 +1,20 @@
-<div style="padding:10px"> </div>
+<div class="comment_header pull-left">
+  <h2 class="comment_title"> Comments </h2>
+</div>
 
-<% @comment.reverse.each do |c| %>
-<% if c.post_id == @post.id %>
-  <blockquote style="text-align:left">
-          <p> <%= c.content %> </p>
-          <% @user.each do |u| if u.id == c.user_id %>
-          <footer> <%= u.grade %> 학년 <%= u.username %>  <%= c.created_at %></footer>
-        <% end %>
+<div class="comment_body pull-left">
+  <% @comment.reverse.each do |c| %>
+    <div class="comment">
+    <% if c.post_id == @post.id %>
+      <% @user.each do |u| if u.id == c.user_id %>
+      <div class=content_header>
+        <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span> -->
+        <span class="comment_author"> <%= u.grade %> 학년 <%= u.username %> </span>
+      </div>
       <% end %>
     <% end %>
-  </blockquote>
-<% end %>
+    <small class="comment_content"> <%= c.content %> </small>
+    <% end %>
+  </div>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@ class NoticeController < ApplicationController
 
 	def index
 		# @post_new = Post.new
-		@post = Post.all.order('created_at DESC').page(params[:page]).per(10)
+		@post = Post.all.order('created_at DESC').page(params[:page]).per(5)
 	end
 
 	def new
