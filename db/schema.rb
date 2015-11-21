@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119011354) do
+ActiveRecord::Schema.define(version: 20151121074148) do
+
+  create_table "boards", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "author"
+    t.integer  "grade"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -40,22 +50,12 @@ ActiveRecord::Schema.define(version: 20151119011354) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "freeboards", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "author"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
     t.string   "author"
     t.integer  "grade"
     t.integer  "user_id"
-    t.integer  "post_flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

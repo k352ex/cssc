@@ -21,7 +21,6 @@
         <div class="col-xs-12 col-sm-10">
           <% if current_user %>
             <%= hidden_field_tag(:author, current_user.username) %>
-            <%= hidden_field_tag(:post_flag, 0) %>
           <% end %>
         </div>
       </div>

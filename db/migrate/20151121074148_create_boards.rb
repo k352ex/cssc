@@ -1,6 +1,6 @@
-class CreatePosts < ActiveRecord::Migration
+class CreateBoards < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
+    create_table :boards do |t|
 
       t.string :title # 제목
       t.string :content # 내용

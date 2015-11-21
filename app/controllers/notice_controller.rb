@@ -21,7 +21,6 @@ class NoticeController < ApplicationController
 		  @post = Post.new(post_params)
 			@post.user_id = params[:user_id]
       @post.author = params[:author]
-      @post.post_flag = params[:post_flag]
 
 	    if @post.save
 	      flash[:notice] = "공지가 작성되었습니다."

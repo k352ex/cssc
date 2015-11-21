@@ -1,4 +1,4 @@
-<% @post.each do |p| if p.post_flag == 0 %>
+<% @post.each do |p| %>
     <tr>
       <th scope="row"> <%= p.id %></th>
       <td>
@@ -18,5 +18,4 @@
       <td> <%= p.author %> </td>
       <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
     </tr>
-  <% end %>
 <% end %>
