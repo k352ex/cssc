@@ -28,7 +28,8 @@
         <%= raw @post.content  %>
         <% if current_user.id == @post.user_id %>
         <div class="pull-right">
-          <%= link_to("Edit", edit_notice_path(@post), class: "btn btn-default") %>
+          <%= link_to("수정", edit_notice_path(@post), class: "btn btn-default") %>
+          <%= link_to("삭제", notice_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
         </div>
         <% end %>
 

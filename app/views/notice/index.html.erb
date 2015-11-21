@@ -23,11 +23,9 @@
             <%= render :partial => 'notice/post' %>
   	  	</tbody>
       </table>
-      <div class="pull-right">
-        <%= link_to("글 작성", new_notice_path, class: "btn btn-default", role: "button") %>
-      </div>
+        <%= link_to("글 작성", new_notice_path, class: "btn btn-default pull-right", role: "button") %>
       <div class="text-center paginator">
-        <%= paginate @post %>
+        <%= paginate @post, :window => 2 %>
       </div>
       <div id="counter"class="pagination_count text-center">
         <%= page_entries_info @post, :remote => true %>

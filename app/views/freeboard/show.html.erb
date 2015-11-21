@@ -24,6 +24,7 @@
     <% if current_user.id == @freeboard.user_id %>
     <div class="pull-right">
       <%= link_to("Edit", edit_freeboard_path(@freeboard), class: "btn btn-default") %>
+      <%= link_to("삭제", freeboard_path(@freeboard), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
     </div>
     <% end %>
   </div>

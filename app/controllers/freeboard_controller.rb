@@ -40,6 +40,12 @@ class FreeboardController < ApplicationController
  		end
 	end
 
+  def destroy
+    @freeboard = Freeboard.find(params[:id])
+    @freeboard.destroy
+    redirect_to freeboard_index_path
+  end
+
 
 	private
 
