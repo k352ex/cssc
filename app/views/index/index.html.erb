@@ -1,17 +1,19 @@
-<div class="container" id="carousel">
-  <% if flash[:notice] %>
-    <div class="notice">
+<% if flash[:notice] %>
+  <div class="notice">
     <div class="alert alert-success alert-dismissible" role="alert" id="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
         <%= flash[:notice] %>
-      </div>
-      <script>
-     setTimeout("$('#alert').fadeOut('slow')", 2000)
-     </script>
     </div>
-  <% end %>
+      <script>
+        setTimeout("$('#alert').fadeOut('slow')", 2000)
+      </script>
+  </div>
+<% end %>
+
+
+<div class="container" id="carousel">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12" id="carousel_body">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

@@ -13,6 +13,8 @@ class NoticeController < ApplicationController
 	def create
 		  @post = Post.new(post_params)
 			@post.user_id = params[:user_id]
+      @post.author = params[:author]
+
 	    if @post.save
 	      flash[:notice] = "공지가 작성되었습니다."
 	      redirect_to notice_path(@post)

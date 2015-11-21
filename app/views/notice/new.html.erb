@@ -12,15 +12,15 @@
       <div class="form-group">
         <%= f.label "제목", :class => "col-sm-2 control-label", for: "selectgrade" %>
         <div class="col-xs-12 col-sm-10">
-          <%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true %>
+          <%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true, :maxlength => 20 %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label "작성자", :class => "col-sm-2 control-label", for: "selectgrade" %>
+        <!-- <%= f.label "작성자", :class => "col-sm-2 control-label", for: "selectgrade" %> -->
         <div class="col-xs-12 col-sm-10">
           <% if current_user %>
-            <%= f.text_field(:author, value:current_user.username, class: "form-control") %>
+            <%= hidden_field_tag(:author, current_user.username) %>
           <% end %>
         </div>
       </div>

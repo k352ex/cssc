@@ -1,46 +1,48 @@
 <div style="padding:20px;"> </div>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <% if flash[:notice] %>
-      <div class="notice">
-  		<div class="alert alert-success alert-dismissible" role="alert">
-  			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  				<span aria-hidden="true">&times;</span>
-  			</button>
-      		<%= flash[:notice] %>
-      	</div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<div style="padding:20px;"> </div>
-
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading" id="panel-heading">
-        <%= raw @post.title %>
-        <p class="pull-right"> <%= @post.author %> </p>
-      </div>
-      <div class="panel-body">
-        <%= raw @post.content  %>
-        <% if current_user.id == @post.user_id %>
-        <div class="pull-right">
-          <%= link_to("수정", edit_notice_path(@post), class: "btn btn-default") %>
-          <%= link_to("삭제", notice_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+<div class="container">
+  <div class="row">
+      <% if flash[:notice] %>
+        <div class="notice">
+      		<div class="alert alert-success alert-dismissible" role="alert">
+      			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      				<span aria-hidden="true">&times;</span>
+      			</button>
+          		<%= flash[:notice] %>
+        	</div>
         </div>
-        <% end %>
-
-      </div>
-    </div>
+      <% end %>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <%= render 'comments/index' %>
-        <%= render 'comments/new' %>
+
+  <div style="padding:20px;"> </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="panel-heading">
+          <%= raw @post.title %>
+          <p class="pull-right"> 자유게시판 | <%= @post.author %> </p>
+        </div>
+        <div class="panel-body" id="post_body">
+          <div class="post_content">
+            <%= raw @post.content  %>
+          </div>
+        </div>
+      </div>
+         <!-- 수정, 삭제기능 글쓴이 일때만 보이도록 처리 -->
+        <% if current_user.id == @post.user_id %>
+          <div class="pull-right" style="margin-bottom:20px">
+            <%= link_to("수정", edit_notice_path(@post), class: "btn btn-default") %>
+            <%= link_to("삭제", notice_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+          </div>
+        <% end %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body" id="comment">
+          <%= render 'comments/index' %>
+          <%= render 'comments/new' %>
+        </div>
       </div>
     </div>
   </div>

@@ -13,28 +13,8 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <!-- <li class="<%= 'active' if params[:controller] == 'index' %>"> <%= link_to "Home", root_path %> </li> -->
-          <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체공지", notice_index_path %> </li>
-          <!-- <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 공지 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">1학년</a></li>
-              <li><a href="#">2학년</a></li>
-              <li><a href="#">3학년</a></li>
-              <li><a href="#">4학년</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">학년 별 게시판 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">1학년</a></li>
-              <li><a href="#">2학년</a></li>
-              <li><a href="#">3학년</a></li>
-              <li><a href="#">4학년</a></li>
-            </ul>
-          </li> -->
+        <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체공지", notice_index_path %> </li>
         <li class="<%= 'active' if params[:controller] == 'freeboard' %>"><%= link_to "자유게시판", freeboard_index_path, class: "nav_component" %> </li>
-        <!-- <li class="<%= 'active' if params[:controller] == 'gather' %>"><%= link_to "공모전", root_path, class: "nav_component" %> </li> -->
         <li class="<%= 'active' if params[:controller] == 'News' %>"><%= link_to "Q & A", root_path, class: "nav_component" %> </li>
       </ul>
 
@@ -49,7 +29,7 @@
             <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
           <% end %>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </nav>
   <div style="padding:25px"></div>

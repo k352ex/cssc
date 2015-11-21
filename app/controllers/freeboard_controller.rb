@@ -16,6 +16,7 @@ class FreeboardController < ApplicationController
 	def create
 		@freeboard = Freeboard.new(freeboard_params)
 		@freeboard.user_id = params[:user_id]
+    @freeboard.author = params[:author]
 
 		if @freeboard.save
 			flash[:notice] = "글이 작성되었습니다."
