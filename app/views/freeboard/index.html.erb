@@ -10,7 +10,7 @@
   		  </div>
   	  	<thead>
   	        <tr>
-  	          <th>전체 공지</th>
+  	          <th>글 번호</th>
   	          <th>제 목</th>
   	          <th>작성자</th>
   	          <th>작성 일자</th>
@@ -24,11 +24,11 @@
 	   <%= link_to("글 작성", new_freeboard_path, class: "btn btn-default pull-right", role: "button") %>
 
      <div class="text-center paginator">
-       <%= paginate @freeboard, :window => 2 %>
+       <%= paginate @post, :window => 2 %>
      </div>
-     <div id="counter"class="pagination_count text-center">
-       <%= page_entries_info @freeboard, :remote => true %>
-     </div>
+     <!-- <div id="counter"class="pagination_count text-center">
+       <%= page_entries_info @post, :remote => true %>
+     </div> -->
     </div>
   </div>
 </div>

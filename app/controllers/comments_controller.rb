@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comments = Comment.new(comment_params)
     @comments.user_id = params[:user_id]
     @comments.post_id = params[:post_id]
-    
+
     if @comments.save
       redirect_to notice_path(@comments.post_id)
     else

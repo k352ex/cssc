@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration
 
       t.integer :grade
       t.integer :user_id
+      t.integer :post_flag # 0 => 전체공지 , 1 => 자유게시판
 
       t.timestamps null: false
     end

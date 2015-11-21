@@ -1,21 +1,22 @@
-<% @post.each do |p| %>
-<tr>
-  <th scope="row"> <%= p.id %></th>
-  <td>
-    <% if p.grade == 0 %>
-      <p> 전체 </p>
-    <% elsif p.grade == 1 %>
-      <p> 1학년 </p>
-    <% elsif p.grade == 2 %>
-      <p> 2학년 </p>
-    <% elsif p.grade == 3 %>
-      <p> 3학년 </p>
-    <% else %>
-      <p> 4학년 </p>
-    <% end %>
-  </td>
-  <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
-  <td> <%= p.author %> </td>
-  <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
-</tr>
+<% @post.each do |p| if p.post_flag == 0 %>
+    <tr>
+      <th scope="row"> <%= p.id %></th>
+      <td>
+        <% if p.grade == 0 %>
+          <p> 전체 </p>
+        <% elsif p.grade == 1 %>
+          <p> 1학년 </p>
+        <% elsif p.grade == 2 %>
+          <p> 2학년 </p>
+        <% elsif p.grade == 3 %>
+          <p> 3학년 </p>
+        <% else %>
+          <p> 4학년 </p>
+        <% end %>
+      </td>
+      <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
+      <td> <%= p.author %> </td>
+      <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
+    </tr>
+  <% end %>
 <% end %>

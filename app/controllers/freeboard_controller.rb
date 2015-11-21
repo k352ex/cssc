@@ -2,25 +2,29 @@ class FreeboardController < ApplicationController
   before_action :authenticate_user!
 
 	def index
-    @freeboard = Freeboard.all.order('created_at DESC').page(params[:page]).per(5)
+    @post = Post.all.order('created_at DESC').page(params[:page]).per(5)
 	end
 
 	def show
-		@freeboard = Freeboard.find(params[:id])
+		@post = Post.find(params[:id])
+    @comment = Comment.all
+    @comments = Comment.new
+    @user = User.all
 	end
 
 	def new
-		@freeboard = Freeboard.new
+		@post = Post.new
 	end
 
 	def create
-		@freeboard = Freeboard.new(freeboard_params)
-		@freeboard.user_id = params[:user_id]
-    @freeboard.author = params[:author]
+		@post = Post.new(post_params)
+		@post.user_id = params[:user_id]
+    @post.author = params[:author]
+    @post.post_flag = params[:post_flag]
 
-		if @freeboard.save
+		if @post.save
 			flash[:notice] = "글이 작성되었습니다."
-			redirect_to freeboard_path(@freeboard)
+			redirect_to freeboard_path(@post)
 		else
 			flash[:alert] = '실패'
 			render 'new'
@@ -28,29 +32,29 @@ class FreeboardController < ApplicationController
 	end
 
 	def edit
-		@freeboard = Freeboard.find(params[:id])
+		@post = Post.find(params[:id])
 	end
 
 	def update
-		@freeboard = Freeboard.find(params[:id])
+		@post = Post.find(params[:id])
 
- 		if @freeboard.update(freeboard_params)
-	 		redirect_to @freeboard
+ 		if @post.update(post_params)
+	 		redirect_to @post
  		else
 	 		render 'edit'
  		end
 	end
 
   def destroy
-    @freeboard = Freeboard.find(params[:id])
-    @freeboard.destroy
-    redirect_to freeboard_index_path
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to notice_index_path
   end
-
 
 	private
 
-	def freeboard_params
-		params.require(:freeboard).permit(:title, :content, :author)
+	def post_params
+		params.require(:post).permit(:title, :content, :author)
 	end
+
 end

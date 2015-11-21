@@ -16,18 +16,26 @@
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= raw @freeboard.title %></h3>
+        <h3 class="panel-title"><%= raw @post.title %></h3>
       </div>
       <div class="panel-body">
-        <%= raw @freeboard.content  %>
+        <%= raw @post.content  %>
       </div>
     </div>
-    <% if current_user.id == @freeboard.user_id %>
+    <% if current_user.id == @post.user_id %>
     <div class="pull-right">
-      <%= link_to("Edit", edit_freeboard_path(@freeboard), class: "btn btn-default") %>
-      <%= link_to("삭제", freeboard_path(@freeboard), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+      <%= link_to("Edit", edit_freeboard_path(@post), class: "btn btn-default") %>
+      <%= link_to("삭제", freeboard_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
     </div>
     <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-body" id="comment">
+        <%= render 'comments/index' %>
+        <%= render 'comments/new' %>
+      </div>
+    </div>
   </div>
 </div>
 

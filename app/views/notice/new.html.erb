@@ -21,6 +21,7 @@
         <div class="col-xs-12 col-sm-10">
           <% if current_user %>
             <%= hidden_field_tag(:author, current_user.username) %>
+            <%= hidden_field_tag(:post_flag, 0) %>
           <% end %>
         </div>
       </div>
@@ -33,7 +34,7 @@
       </div>
     </div>
       <div class="form-group">
-        <%= f.cktext_area :content, rows: 10 %>
+        <%= f.cktext_area :content, rows: 10, :required => true %>
       </div>
       <%= hidden_field_tag(:user_id, current_user.id) %>
       <div class="pull-right">

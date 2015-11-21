@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20151119011354) do
     t.string   "author"
     t.integer  "grade"
     t.integer  "user_id"
+    t.integer  "post_flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

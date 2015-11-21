@@ -6,6 +6,13 @@ class NoticeController < ApplicationController
 		@post = Post.all.order('created_at DESC').page(params[:page]).per(5)
 	end
 
+	def show
+    @post = Post.find(params[:id])
+    @comment = Comment.all
+    @comments = Comment.new
+    @user = User.all
+	end
+
 	def new
 		@post = Post.new
 	end
@@ -14,6 +21,7 @@ class NoticeController < ApplicationController
 		  @post = Post.new(post_params)
 			@post.user_id = params[:user_id]
       @post.author = params[:author]
+      @post.post_flag = params[:post_flag]
 
 	    if @post.save
 	      flash[:notice] = "공지가 작성되었습니다."
@@ -23,13 +31,6 @@ class NoticeController < ApplicationController
 	      render 'new'
 	   end
 	 end
-
-	def show
-    @post = Post.find(params[:id])
-    @comment = Comment.all
-    @comments = Comment.new
-    @user = User.all
-	end
 
 	def edit
 		@post = Post.find(params[:id])
