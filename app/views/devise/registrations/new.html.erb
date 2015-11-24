@@ -8,12 +8,14 @@
         <%= devise_error_messages! %>
 
         <div class="form-group">
+          <!-- 이름 입력 -->
           <%= f.label :username, :class => "col-sm-2 control-label", for: "name" %>
           <div class="col-sm-10">
             <%= f.text_field :username, autofocus: true, id:"name" , :class => "form-control", placeholder: "이름" %>
           </div>
         </div>
 
+        <!-- 이메일 입력 -->
         <div class="form-group">
           <%= f.label :Email, :class => "col-sm-2 control-label", for: "inputEmail3" %>
           <div class="col-sm-10">
@@ -21,6 +23,15 @@
           </div>
         </div>
 
+        <!-- 학번입력 -->
+        <div class="form-group">
+          <%= f.label :school_number, :class => "col-sm-2 control-label", for: "school_number" %>
+          <div class="col-sm-10">
+            <%= f.text_field :school_number, :class => "form-control", placeholder: "학번" %>
+          </div>
+        </div>
+
+        <!-- 패스워드 입력 -->
         <div class="form-group">
           <%= f.label :password , :class => "col-sm-2 control-label", for: "inputPassword3"%>
           <div class="col-sm-10">
@@ -31,6 +42,7 @@
           </div>
         </div>
 
+        <!-- 패스워드 확인 -->
         <div class="form-group">
           <%= f.label :password_confirmation, :class => "col-sm-2 control-label", for: "inputPassword3" %>
           <div class="col-sm-10">
@@ -43,7 +55,7 @@
         <div class="form-group">
           <%= f.label :grade, :class => "col-sm-2 control-label", for: "selectgrade" %>
           <div class="col-xs-12 col-sm-10">
-           <%= f.select :grade, options_for_select(1..4), {}, { :class => 'form-control'} %>
+           <%= f.select :grade, options_for_select([["전체", 0],["1학년", 1], ["2학년", 2], ["3학년", 3], ["4학년",4]]), {}, { :class => 'form-control'} %>
           </div>
         </div>
 
