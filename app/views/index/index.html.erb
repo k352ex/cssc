@@ -71,7 +71,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @post.reverse.each do |p| if p.post_flag == 0%>
+          <% @post.reverse.each do |p|%>
           <tr>
             <th scope="row"> <%= p.id %> </th>
               <td>
@@ -91,7 +91,6 @@
               <td> <%= p.author %></td>
               <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
           </tr>
-          <% end %>
         <% end %>
         </tbody>
       </table>
@@ -110,14 +109,13 @@
           </tr>
         </thead>
         <tbody>
-          <% @post.reverse.each do |p| if p.post_flag == 1%>
+          <% @board.reverse.each do |p|%>
           <tr>
             <th scope="row"> <%= p.id %> </th>
               <td> <%= link_to("#{p.title}", freeboard_path(p.id)) %></td>
               <td> <%= p.author %></td>
               <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
           </tr>
-          <% end %>
           <% end %>
         </tbody>
       </table>
