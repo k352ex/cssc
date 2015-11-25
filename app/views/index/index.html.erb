@@ -54,6 +54,8 @@
   </div>
 </div>
   <div style="padding:20px"> </div>
+
+<!-- 메인 페이지 게시판 부분   -->
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -76,20 +78,20 @@
             <th scope="row"> <%= p.id %> </th>
               <td>
                 <% if p.grade == 0 %>
-                  <p> 전체 </p>
+                  <p class="post_index"> 전체 </p>
                 <% elsif p.grade == 1 %>
-                  <p> 1학년 </p>
+                  <p class="post_index"> 1학년 </p>
                 <% elsif p.grade == 2 %>
-                  <p> 2학년 </p>
+                  <p class="post_index"> 2학년 </p>
                 <% elsif p.grade == 3 %>
-                  <p> 3학년 </p>
+                  <p class="post_index"> 3학년 </p>
                 <% else %>
-                  <p> 4학년 </p>
+                  <p class="post_index"> 4학년 </p>
                 <% end %>
               </td>
-              <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
-              <td> <%= p.author %></td>
-              <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
+              <td> <p class="post_index"> <%= link_to "#{p.title}", notice_path(p.id) %> </p> </td>
+              <td> <p class="post_index"> <%= p.author %> </p> </td>
+              <td> <p class="post_index"> <%= p.updated_at.strftime("%Y. %m. %d") %> </p> </td>
           </tr>
         <% end %>
         </tbody>
@@ -111,10 +113,10 @@
         <tbody>
           <% @board.reverse.each do |p|%>
           <tr>
-            <th scope="row"> <%= p.id %> </th>
-              <td> <%= link_to("#{p.title}", freeboard_path(p.id)) %></td>
-              <td> <%= p.author %></td>
-              <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
+              <th scope="row"> <%= p.id %> </th>
+              <td> <p class="post_index"> <%= link_to("#{p.title}", freeboard_path(p.id)) %> </p> </td>
+              <td> <p class="post_index"> <%= p.author %> </p> </td>
+              <td> <p class="post_index"> <%= p.updated_at.strftime("%Y. %m. %d") %> </p> </td>
           </tr>
           <% end %>
         </tbody>
