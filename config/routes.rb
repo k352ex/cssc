@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   root 'index#index' # Root 경로
 
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'sign_up' }
+
   resources :index
+
   resources :notice
+  resources :notice_comment
+
   resources :freeboard
-  resources :comments
+  resources :freeboard_comment
+
 
 end

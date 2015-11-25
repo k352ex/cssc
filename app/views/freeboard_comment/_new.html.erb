@@ -1,6 +1,6 @@
-<%= form_for @comments, :url => comments_path(@comments), :action => "create", :html => {:class => "form-inline form-horizontal", :method => :post} do |f| %>
+<%= form_for @freeboard_comment, :url => freeboard_comment_index_path(@freeboard_comment), :action => "create", :html => {:class => "form-inline form-horizontal", :method => :post} do |f| %>
   <%= f.text_field :content , class: "form-control", id: "comment_input", placeholder: "댓글", :required => false, autofocus: true %>
   <%= hidden_field_tag(:user_id, current_user.id) %>
-  <%= hidden_field_tag(:post_id, @post.id) %>
+  <%= hidden_field_tag(:board_id, @board.id) %>
   <%= f.submit "제출", class: "btn btn-default" %>
 <% end %>

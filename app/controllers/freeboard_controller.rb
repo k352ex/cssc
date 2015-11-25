@@ -6,9 +6,9 @@ class FreeboardController < ApplicationController
 	end
 
 	def show
-		@board = Board.find(params[:id])
-    @comment = Comment.all
-    @comments = Comment.new
+    @board = Board.find(params[:id])
+    @freeboard_comment = FreeboardComment.new
+    @freeboard_comments = FreeboardComment.all
     @user = User.all
 	end
 
@@ -53,7 +53,7 @@ class FreeboardController < ApplicationController
 	private
 
 	def board_params
-		params.require(:post).permit(:title, :content, :author)
+		params.require(:board).permit(:title, :content, :author)
 	end
 
 end

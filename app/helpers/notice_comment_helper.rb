@@ -1,0 +1,2 @@
+module NoticeCommentHelper
+end

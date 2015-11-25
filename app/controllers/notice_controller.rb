@@ -8,8 +8,8 @@ class NoticeController < ApplicationController
 
 	def show
     @post = Post.find(params[:id])
-    @comment = Comment.all
-    @comments = Comment.new
+    @notice_comment = Comment.new
+    @notice_comments = Comment.all
     @user = User.all
 	end
 

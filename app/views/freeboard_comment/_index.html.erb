@@ -2,7 +2,7 @@
   <h2 class="comment_title"> Comments </h2>
 </div>
 
-<% @comment.reverse.each do |c| if c.post_id == @post.id %>
+<% @freeboard_comments.reverse.each do |c| if c.id == @board.id %>
   <div class="comment_body">
     <div class="comment">
       <% @user.each do |u| %>
@@ -17,5 +17,5 @@
       </small>
     </div>
   </div>
-  <% end %>
+<% end %>
 <% end %>

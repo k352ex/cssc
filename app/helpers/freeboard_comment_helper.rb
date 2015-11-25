@@ -1,0 +1,2 @@
+module FreeboardCommentHelper
+end
