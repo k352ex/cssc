@@ -1,21 +1,27 @@
-<div class="comment_header">
-  <h2 class="comment_title"> Comments </h2>
+<div>
+  <h5 class="comment_title"> | Comments </h5>
 </div>
 
-<% @notice_comments.reverse.each do |c| if c.post_id == @post.id %>
-  <div class="comment_body">
-    <div class="comment">
-      <% @user.each do |u| %>
-        <% if u.id == c.user_id %>
-          <div class=content_header>
-            <span class="comment_author"> <%= u.grade %> 학년 <%= u.username %> </span>
+<div class="comment_body">
+  <% @notice_comments.reverse.each do |c| if c.post_id == @post.id %>
+    <div>
+        <div class="comment">
+          <% @user.each do |u| %>
+            <% if u.id == c.user_id %>
+              <div class=comment_header>
+                <p class="comment_info"> 작성자 : <%= u.grade %> 학년 <%= u.username %> </p>
+                <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+              </div>
+              <% end %>
+            <% end %>
+              <div class="comment_content">
+                <p> <%= c.content %> </p>
+                <% if @notice_comments %>
+                <%= link_to("삭제", notice_comment_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+                <% end %>
+              </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-      <small class="comment_content">
-        <%= c.content %>
-      </small>
-    </div>
-  </div>
   <% end %>
-<% end %>
+</div>

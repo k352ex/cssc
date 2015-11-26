@@ -10,6 +10,8 @@ gem 'paperclip'
 gem 'kaminari' # pagination
 gem 'kaminari-bootstrap'
 
+gem 'rails_admin', '~> 0.7.0'  # admin 
+
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'

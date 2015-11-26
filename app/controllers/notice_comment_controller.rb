@@ -20,6 +20,17 @@ class NoticeCommentController < ApplicationController
 
   end
 
+  def update
+
+  end
+
+  def destroy
+    @notice_comment = Comment.find(params[:id])
+    @notice = @notice_comment.post_id
+    @notice_comment.destroy
+    redirect_to notice_path(@notice)
+  end
+
   private
 
   def notice_comment_params

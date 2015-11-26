@@ -1,3 +1,45 @@
 // Place all the styles related to the notice_comment controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment_title {
+  text-align: left;
+}
+
+.comment_header {
+  text-align: left;
+}
+
+.comment_body {
+  margin: 10px;
+}
+
+.comment {
+  border-top: 2px solid gray;
+  margin-top: 5px;
+}
+
+.comment_content {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.comment_info {
+  padding: 5px;
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+.comment_created {
+  width: 200px;
+  display: inline-block;
+  text-align: right;
+}
+
+#comment_input {
+  width: 450px;
+  display: inline-block;
+}
