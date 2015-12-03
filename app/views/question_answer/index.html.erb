@@ -1,0 +1,37 @@
+<div style="padding:10px;"> </div>
+
+<div class="container" id="question_container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+  	<table class="table">
+  	  	<div class="panel panel-default">
+    			<div class="panel-body">
+      			질문 게시판
+    			</div>
+  		</div>
+  	  	<thead>
+  	        <tr>
+  	          <th> <p class="header"> 글 번호 </p> </th>
+  	          <th> <p class="header"> 제 목 </p> </th>
+  	          <th> <p class="header pull-right"> 작성자 </p> </th>
+  	          <th>
+                <p class="header pull-right"> 작성 일자 </p>
+              </th>
+  	        </tr>
+  	  	</thead>
+  	  	<tbody id="post">
+          <%= render :partial => 'question_answer/question' %>
+  	  	</tbody>
+      </table>
+        <%= link_to("질문 작성", new_question_answer_path, class: "btn btn-default pull-right", role: "button") %>
+      <div class="text-center paginator">
+        <%= paginate @question_answer, :window => 2 %>
+      </div>
+      <div id="counter"class="pagination_count text-center">
+        <%= page_entries_info @question_answer, :remote => true %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin:250px"> </div>

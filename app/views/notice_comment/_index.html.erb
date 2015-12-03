@@ -9,16 +9,24 @@
           <% @user.each do |u| %>
             <% if u.id == c.user_id %>
               <div class=comment_header>
-                <p class="comment_info"> 작성자 : <%= u.grade %> 학년 <%= u.username %> </p>
-                <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+                <% if u.grade == 0 %>
+                  <p class="comment_info"> 작성자 : <%= u.username %> </p>
+                  <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+                <% else %>
+                  <p class="comment_info"> 작성자 : <%= u.grade %> 학년 <%= u.username %> </p>
+                  <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+                <% end %>
               </div>
               <% end %>
             <% end %>
               <div class="comment_content">
-                <p> <%= c.content %> </p>
-                <% if @notice_comments %>
-                <%= link_to("삭제", notice_comment_path(@post), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
-                <% end %>
+                <p>
+                  <%= c.content %>
+                  <% if @notice_comments %>
+                  <%= link_to("수정", edit_notice_comment_path(@post)) %>
+                  <%= link_to("삭제", notice_comment_path(@post), method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+                  <% end %>
+                </p>
               </div>
           </div>
         </div>

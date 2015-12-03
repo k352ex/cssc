@@ -1,0 +1,8 @@
+<% @question_answer.each do |q| %>
+    <tr>
+      <th scope="row"> <%= q.id %></th>
+      <td> <p class="header"> <%= link_to "#{q.title}", question_answer_path(q.id) %> </p> </td>
+      <td> <p class="header pull-right"> <%= q.author %> </p> </td>
+      <td> <p class="header pull-right"><%= q.updated_at.strftime("%Y. %m. %d") %> </p> </td>
+    </tr>
+<% end %>

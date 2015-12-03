@@ -1,0 +1,38 @@
+// Place all the styles related to the question_answer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.QuestionAnswerHeader {
+  border-bottom: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+
+.HeaderContents {
+  text-align: center;
+}
+
+.QuestionContents {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+}
+
+.QuestionWrite {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.QuestionFooter {
+  padding: 10px;
+}
+
+.question_new {
+  margin: 10px;
+}
+
+.header {
+  padding: 0px;
+  margin: 0 auto;
+}

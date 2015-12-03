@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :freeboard
   resources :freeboard_comment
 
+  resources :question_answer
 
 end

@@ -1,0 +1,34 @@
+<div class="container question_new">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <%= form_for @question_answer, :html => {:class => 'form-horizontal'}, url: {action: "create"} do |f| %>
+      <div>
+        <div class="form-group">
+          <%= f.label "제목", :class => "col-sm-2 control-label", for: "selectgrade" %>
+          <div class="col-xs-12 col-sm-10">
+            <%= f.text_field :title , class: "form-control", placeholder: "타이틀", :required => true, autofocus: true, :maxlength => 20 %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-10">
+            <% if current_user %>
+              <%= hidden_field_tag(:author, current_user.username) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <%= f.cktext_area :contents, rows: 10, :required => true, class: "ckeditor" %>
+        </div>
+        <%= hidden_field_tag(:user_id, current_user.id) %>
+        <div class="pull-right">
+          <%= link_to("뒤로 가기", :back, class: "btn btn-default", role: "button") %>
+          <%= f.submit "제출", class: "btn btn-default" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

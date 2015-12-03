@@ -25,8 +25,7 @@ head, body {
   z-index: 10000;
 }
 
-
- #footer {
+#footer {
    background-color: #2b2b2b;
    color: #fff;
    text-align:center;
@@ -35,4 +34,8 @@ head, body {
 
 footer > h4 {
   color: #fff;
+}
+
+.copyright {
+  text-align: center;
 }
