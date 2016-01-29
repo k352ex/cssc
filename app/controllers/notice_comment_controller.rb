@@ -24,6 +24,10 @@ class NoticeCommentController < ApplicationController
 
   end
 
+  def edit
+    @notice_comment = Comment.find(params[:id])
+  end
+
   def destroy
     @notice_comment = Comment.find(params[:id])
     @notice = @notice_comment.post_id

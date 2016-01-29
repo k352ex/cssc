@@ -21,7 +21,7 @@
   	  	</tbody>
   	</table>
 
-	   <%= link_to("글 작성", new_freeboard_path, class: "btn btn-default pull-right", role: "button") %>
+	   <%= link_to("글 작성", new_board_path, class: "btn btn-default pull-right", role: "button") %>
 
      <div class="text-center paginator">
        <%= paginate @board, :window => 2 %>

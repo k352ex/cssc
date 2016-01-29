@@ -1,3 +1,6 @@
+<!-- Alert 창 -->
+<!-- Login, Logout 시 출력 -->
+<!-- 게시글 삭제시에도 출력?  -->
 <% if flash[:notice] %>
   <div class="notice">
     <div class="alert alert-success alert-dismissible" role="alert" id="alert">
@@ -11,56 +14,71 @@
       </script>
   </div>
 <% end %>
+<%= image_tag("main1.png", :width => "100%") %>
 
-
-<div class="container" id="carousel">
+<!-- 메인 이미지 슬라이더 -->
+<!-- <div class="container" id="carousel">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12" id="carousel_body">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-    <div class="carousel-inner" id="carousel-inner" role="listbox">
-      <div class="item active">
-           <%= image_tag("Coding.jpg", :width => "100%") %>
-        <div class="carousel-caption">
-           <h4> 원광대학교 컴퓨터공학과 홈페이지 </h4>
-        </div>
-      </div>
-      <div class="item">
-          <%= image_tag("Coding1.jpg", :width => "100%") %>
-        <div class="carousel-caption">
-          <h4> 학과 학년 별 공지, 게시판 등이 있으니 이용해주시면 감사하겠습니다. </h4>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag("Coding2.jpg", :width => "100%") %>
-      </div>
-    </div>
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
 
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+        <div class="carousel-inner" id="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= image_tag("main1.png", :width => "100%") %>
+            <div class="carousel-caption">
+               <h4> 원광대학교 컴퓨터공학과 커뮤니티 <sub> <i> beta </i> </sub> </h4>
+            </div>
+          </div>
+
+          <div class="item">
+              <%= image_tag("Coding1.jpg", :width => "100%") %>
+            <div class="carousel-caption">
+                <h4> Beta버전 테스트 중입니다. </h4>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag("Coding2.jpg", :width => "100%") %>
+          </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </div>
-</div>
-  <div style="padding:20px"> </div>
+</div> -->
+
+<!-- <div class="row" style="margin-top: 30px;">
+    <div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1 col-ls-10 col-ls-offset-1">
+        <div class="jumbotron" style="border-radius:20px;">
+          <h1 style="padding: 10px;"> 컴퓨터공학과 커뮤니티 사이트 </h1>
+          <p style="padding: 10px;"> Beta 버전 </p>
+          <p style="text-align:center"> <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+    </div>
+</div> -->
+<div style="padding:20px"> </div>
 
 <!-- 메인 페이지 게시판 부분   -->
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="well well-sm">
-        전체 공지사항
+        <span> 전체 공지사항 </span>
+        <!-- 최근 3일 이네 게시물만 카운트 하도록 설정하기 -->
+        <span class="badge" style="background-color:rgba(87, 191, 191, 0.65);"><%= @PostCount %></span>
       </div>
       <table class="table table-striped">
         <thead>
@@ -89,7 +107,7 @@
                   <p class="post_index"> 4학년 </p>
                 <% end %>
               </td>
-              <td> <p class="post_index"> <%= link_to "#{p.title}", notice_path(p.id) %> </p> </td>
+              <td> <p class="post_index"> <%= link_to "#{p.title}", notice_path(p.id), class: "notice_post"%> </p> </td>
               <td> <p class="post_index"> <%= p.author %> </p> </td>
               <td> <p class="post_index"> <%= p.updated_at.strftime("%Y. %m. %d") %> </p> </td>
           </tr>
@@ -99,7 +117,8 @@
     </div>
       <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="well well-sm">
-        자유 게시판
+        <span> 자유 게시판 </span>
+        <span class="badge" style="background-color:rgba(87, 191, 191, 0.65);"><%= @BoardCount %></span>
       </div>
       <table class="table table-striped">
         <thead>
@@ -114,7 +133,7 @@
           <% @board.reverse.each do |p|%>
           <tr>
               <th scope="row"> <%= p.id %> </th>
-              <td> <p class="post_index"> <%= link_to("#{p.title}", freeboard_path(p.id)) %> </p> </td>
+              <td> <p class="post_index"> <%= link_to "#{p.title}", board_path(p.id), class: "board_post" %> </p> </td>
               <td> <p class="post_index"> <%= p.author %> </p> </td>
               <td> <p class="post_index"> <%= p.updated_at.strftime("%Y. %m. %d") %> </p> </td>
           </tr>
@@ -122,5 +141,15 @@
         </tbody>
       </table>
     </div>
+   </div>
+
+   <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-6" style="height: 500px; background-color: black; color:white">
+           <p> Q&A </p>
+       </div>
+
+       <div class="col-xs-12 col-sm-12 col-md-6" style="height: 500px; background-color: blue; color:white">
+           <p> 공모전 정보 </p>
+       </div>
    </div>
 </div>

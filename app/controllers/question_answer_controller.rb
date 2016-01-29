@@ -1,4 +1,6 @@
 class QuestionAnswerController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @question_answer = QuestionAnswer.all.order('created_at DESC').page(params[:page]).per(5)
   end

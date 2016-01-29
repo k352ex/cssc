@@ -55,3 +55,16 @@ a {
 	margin-top: 10px;
 	margin-bottom: 50px;
 }
+
+.notice_post_index_title {
+	color: black;
+	// text-decoration: none;
+}
+
+.notice_post_index_title:hover  {
+	color: rgba(0, 0, 255, 0.47);
+	text-decoration: none;
+	// text-shadow:#999999 1px 1px 1px; // 텍스트 그림자 효과
+	// font-weight: bold;
+
+}

@@ -43,3 +43,29 @@
 .post_index {
   margin: 0px;
 }
+
+.MainTop {
+  width: 100%;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+
+.MainTopTitle {
+  font-size: 50px;
+  text-align : center;
+  height: 630px;
+  font-color: white;
+}
+
+.notice_post, .board_post{
+	color: black;
+}
+
+.notice_post:hover, .board_post:hover {
+	color: rgba(0, 0, 255, 0.47);
+	text-decoration: none;
+	// text-shadow:#999999 1px 1px 1px; // 텍스트 그림자 효과
+	// font-weight: bold;
+
+}

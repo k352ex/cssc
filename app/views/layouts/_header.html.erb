@@ -13,24 +13,34 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-        <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체공지", notice_index_path %> </li>
-        <li class="<%= 'active' if params[:controller] == 'freeboard' %>"><%= link_to "자유게시판", freeboard_index_path, class: "nav_component" %> </li>
-        <li class="<%= 'active' if params[:controller] == 'question_answer' %>"><%= link_to "Q & A", question_answer_index_path, class: "nav_component" %> </li>
+
+        <% if Post.all.reverse.each do |p| %>
+                <% if p.created_at.strftime("%Y %m %d") == Time.now.strftime("%Y %m %d") %>
+                    <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체 공지 <span class='label label-default'>New</span>".html_safe, notice_index_path %> </li>
+                    <% break %>
+                <% else %>
+                    <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체 공지", notice_index_path %> </li>
+                    <% break %>
+                <% end %>
+            <% end %>
+        <% end %>
+        <li class="<%= 'active' if params[:controller] == 'freeboard' %>"><%= link_to "자유 게시판", board_index_path, class: "nav_component" %> </li>
+        <li class="<%= 'active' if params[:controller] == 'question_answer' %>"><%= link_to "질문 게시판", question_answer_index_path, class: "nav_component" %> </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-         <li> <a href="#"> <%= current_user.username %> 님</a> </li>
+          <li> <%= link_to "#{current_user.username}님", root_path %> </li>
         <% end %>
         <% unless current_user %>
-          <li><%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
+          <li> <%= link_to("로그인", new_user_session_path) %><span class="sr-only">(current)</span> </li>
           <li> <%= link_to("회원가입", new_user_registration_path) %> </li>
         <% else %>
-          <li><%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
+          <li> <%= link_to("로그아웃", destroy_user_session_path, :method => :delete) %><span class="sr-only">(current)</span> </li>
         <% end %>
       </ul>
     </div>
   </div>
 </nav>
 
-<div style="padding:25px"></div>
+<div style="padding:25px"> </div>

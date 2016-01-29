@@ -8,13 +8,9 @@ Rails.application.routes.draw do
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'sign_up' }
 
   resources :index
-
   resources :notice
   resources :notice_comment
-
-  resources :freeboard
+  resources :board, controller: 'freeboard'
   resources :freeboard_comment
-
   resources :question_answer
-
 end

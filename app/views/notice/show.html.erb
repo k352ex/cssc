@@ -3,12 +3,16 @@
   <div class="row">
       <% if flash[:notice] %>
         <div class="notice">
-      		<div class="alert alert-success alert-dismissible" role="alert">
+      		<div class="alert alert-success alert-dismissible" role="alert" id="alert" style="border-radius:5px;">
       			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
       				<span aria-hidden="true">&times;</span>
       			</button>
           		<%= flash[:notice] %>
         	</div>
+
+            <script>
+                setTimeout("$('#alert').fadeOut('slow')", 2000)
+            </script>
         </div>
       <% end %>
   </div>
@@ -19,10 +23,10 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
       <div class="panel panel-default">
         <div class="panel-heading" id="panel-heading">
-          <%= raw @post.title %>
+          제목 : <%= raw @post.title %>
           <p class="pull-right"> 공지게시판 | <%= @post.author %> </p>
         </div>
-        <div class="panel-body" id="post_body">
+        <div class="panel-body" id="post_body" style="height: 240px;">
           <div class="post_content">
             <%= raw @post.content  %>
           </div>

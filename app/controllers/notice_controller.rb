@@ -1,5 +1,5 @@
 class NoticeController < ApplicationController
-  before_action :authenticate_user!
+  	before_action :authenticate_user!
 
 	def index
 		# @post_new = Post.new

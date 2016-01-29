@@ -11,10 +11,10 @@
               <div class=comment_header>
                 <% if u.grade == 0 %>
                   <p class="comment_info"> 작성자 : <%= u.username %> </p>
-                  <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+                  <p class="comment_created"> <%= c.created_at.strftime("%Y. %m. %d") %> </p>
                 <% else %>
                   <p class="comment_info"> 작성자 : <%= u.grade %> 학년 <%= u.username %> </p>
-                  <p class="comment_created"> <%= u.created_at.strftime("%Y. %m. %d") %> </p>
+                  <p class="comment_created"> <%= c.created_at.strftime("%Y. %m. %d") %> </p>
                 <% end %>
               </div>
               <% end %>
@@ -23,8 +23,8 @@
                 <p>
                   <%= c.content %>
                   <% if @notice_comments %>
-                  <%= link_to("수정", edit_notice_comment_path(@post)) %>
-                  <%= link_to("삭제", notice_comment_path(@post), method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+                  <%= link_to("수정", edit_notice_comment_path(@post), class: "edit_notice_comment", style: "text-decoration: none; color: white; background:rgba(28, 185, 76, 0.78); border-radius: 5px; padding:1px;") %>
+                  <%= link_to("삭제", notice_comment_path(@post), class: "delete_notice_comment", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }, style: "text-decoration: none; color: white; background:rgba(45, 28, 185, 0.78); border-radius: 5px; padding:1px;") %>
                   <% end %>
                 </p>
               </div>

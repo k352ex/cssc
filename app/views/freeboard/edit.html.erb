@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-offeset-2 col-md-8 col-md-offset-2">
-    <%= form_for @post, class: "form-control", url: freeboard_path(@post), method: "patch" do |f| %>
+    <%= form_for @post, class: "form-control", url: board_path(@post), method: "patch" do |f| %>
     <%= f.text_field :title , class: "form-control", :required => true, autofocus: true %>
     <%= f.text_field :author, class: "form-control" %>
     <!-- <%= f.text_area :content, size: "25x4" , class: "form-control" , placeholder: "내용" %> -->

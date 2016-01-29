@@ -14,7 +14,7 @@
           <p> 4학년 </p>
         <% end %>
       </td>
-      <td> <%= link_to "#{p.title}", notice_path(p.id) %> </td>
+      <td> <%= link_to "#{p.title}", notice_path(p.id), class: "notice_post_index_title" %> </td>
       <td> <%= p.author %> </td>
       <td> <%= p.updated_at.strftime("%Y. %m. %d") %> </td>
     </tr>

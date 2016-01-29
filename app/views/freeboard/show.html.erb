@@ -24,8 +24,8 @@
     </div>
     <% if current_user.id == @board.user_id %>
     <div class="pull-right">
-      <%= link_to("Edit", edit_freeboard_path(@board), class: "btn btn-default") %>
-      <%= link_to("삭제", freeboard_path(@board), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+      <%= link_to("Edit", edit_board_path(@board), class: "btn btn-default") %>
+      <%= link_to("삭제", board_path(@board), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
     </div>
     <% end %>
   </div>
