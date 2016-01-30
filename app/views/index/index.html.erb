@@ -76,9 +76,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="well well-sm">
-        <span> 전체 공지사항 </span>
-        <!-- 최근 3일 이네 게시물만 카운트 하도록 설정하기 -->
-        <span class="badge" style="background-color:rgba(87, 191, 191, 0.65);"><%= @PostCount %></span>
+        <div class="main_post_header">
+            <span> 전체 공지사항 </span>
+            <% if @today_post == 1 %>
+                <span class='label label-default post_new' style='background-color:rgba(255, 0, 0, 0.59); text-align:center'>New</span>
+            <% end %>
+                <span class="badge post_count" style="background-color:rgba(87, 191, 191, 0.65);"><%= @PostCount %> </span>
+        </div>
       </div>
       <table class="table table-striped">
         <thead>
@@ -117,8 +121,10 @@
     </div>
       <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="well well-sm">
-        <span> 자유 게시판 </span>
-        <span class="badge" style="background-color:rgba(87, 191, 191, 0.65);"><%= @BoardCount %></span>
+        <div class="main_board_header">
+            <span> 자유 게시판 </span>
+            <span class="badge board_count" style="background-color:rgba(87, 191, 191, 0.65);"><%= @BoardCount %></span>
+        </div>
       </div>
       <table class="table table-striped">
         <thead>

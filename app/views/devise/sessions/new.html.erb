@@ -45,7 +45,8 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <div class="actions">
-            <%= f.submit("로그인",:class => "btn btn-default") %>
+            <%= link_to "회원가입", new_user_registration_path  %> 하시겠습니까?
+            <%= f.submit("로그인",:class => "btn btn-default", style: "float: right") %>
           </div>
         </div>
       </div>

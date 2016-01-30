@@ -13,7 +13,7 @@ class FreeboardCommentController < ApplicationController
     @freeboard_comment.board_id = params[:board_id]
 
     if @freeboard_comment.save
-      redirect_to freeboard_path(@freeboard_comment.board_id)
+      redirect_to board_path(@freeboard_comment.board_id)
     else
       render 'new'
     end

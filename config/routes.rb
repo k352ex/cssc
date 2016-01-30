@@ -9,8 +9,18 @@ Rails.application.routes.draw do
 
   resources :index
   resources :notice
-  resources :notice_comment
-  resources :board, controller: 'freeboard'
-  resources :freeboard_comment
   resources :question_answer
+
+  resources :notice_comment
+  resources :freeboard_comment
+
+  resources :notice do
+      resources :notice_comment
+  end
+
+  resources :board, controller: 'freeboard' do
+    resources :freeboard_comment
+  end # freeboard 경로 /board
+
+
 end

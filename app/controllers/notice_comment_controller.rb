@@ -21,8 +21,14 @@ class NoticeCommentController < ApplicationController
   end
 
   def update
+      @notice_comment = Comment.find(params[:id])
 
-  end
+      if @notice_comment.update(notice_comment_params)
+        redirect_to @notice_comment
+      else
+        render 'edit'
+      end
+    end
 
   def edit
     @notice_comment = Comment.find(params[:id])

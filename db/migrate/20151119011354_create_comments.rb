@@ -5,6 +5,10 @@ class CreateComments < ActiveRecord::Migration
       t.belongs_to :post, index: true, foreign_key: true
       t.belongs_to :user, index: true, foreign_key: true
 
+      t.string :commenter
+      t.text :body
+      t.references :post
+
       t.timestamps null: false
     end
   end

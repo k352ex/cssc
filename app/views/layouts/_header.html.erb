@@ -13,17 +13,7 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-
-        <% if Post.all.reverse.each do |p| %>
-                <% if p.created_at.strftime("%Y %m %d") == Time.now.strftime("%Y %m %d") %>
-                    <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체 공지 <span class='label label-default'>New</span>".html_safe, notice_index_path %> </li>
-                    <% break %>
-                <% else %>
-                    <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체 공지", notice_index_path %> </li>
-                    <% break %>
-                <% end %>
-            <% end %>
-        <% end %>
+        <li class="<%= 'active' if params[:controller] == 'notice' %>"> <%= link_to "전체 공지", notice_index_path %> </li>
         <li class="<%= 'active' if params[:controller] == 'freeboard' %>"><%= link_to "자유 게시판", board_index_path, class: "nav_component" %> </li>
         <li class="<%= 'active' if params[:controller] == 'question_answer' %>"><%= link_to "질문 게시판", question_answer_index_path, class: "nav_component" %> </li>
       </ul>

@@ -23,8 +23,8 @@
                 <p>
                   <%= c.content %>
                   <% if @notice_comments %>
-                  <%= link_to("수정", edit_notice_comment_path(@post), class: "edit_notice_comment", style: "text-decoration: none; color: white; background:rgba(28, 185, 76, 0.78); border-radius: 5px; padding:1px;") %>
-                  <%= link_to("삭제", notice_comment_path(@post), class: "delete_notice_comment", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }, style: "text-decoration: none; color: white; background:rgba(45, 28, 185, 0.78); border-radius: 5px; padding:1px;") %>
+                    <%= link_to("수정", edit_notice_comment_path(c.id), class: "edit_notice_comment", style: "text-decoration: none; color: white; background:rgba(28, 185, 76, 0.78); border-radius: 5px; padding:1px;") %>
+                    <%= link_to("삭제", notice_comment_path(c.id), class: "delete_notice_comment", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }, style: "text-decoration: none; color: white; background:rgba(45, 28, 185, 0.78); border-radius: 5px; padding:1px;") %>
                   <% end %>
                 </p>
               </div>

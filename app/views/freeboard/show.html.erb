@@ -1,42 +1,49 @@
 <div style="padding:20px"> </div>
 
-<div class="row">
-  <% if flash[:notice] %>
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-        <%= flash[:notice] %>
-      </div>
-      <script>
-        setTimeout("$('#alert').fadeOut('slow')", 2000)
-      </script>
-  <% end %>
+<div class="container">
+    <div class="row">
+      <% if flash[:notice] %>
+        <div class="board">
+            <div class="alert alert-success alert-dismissible" role="alert" id="alert" style="border-radius:5px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <%= flash[:notice] %>
+            </div>
+            <!-- Alert Fade out  -->
+            <script>
+                setTimeout("$('#alert').fadeOut('slow')", 2000)
+            </script>
+        </div>
+      <% end %>
+   </div>
 
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= raw @board.title %></h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= raw @board.title %></h3>
+          </div>
+          <div class="panel-body">
+            <%= raw @board.content  %>
+          </div>
+        </div>
+        <% if current_user.id == @board.user_id %>
+        <div class="pull-right">
+          <%= link_to("Edit", edit_board_path(@board), class: "btn btn-default") %>
+          <%= link_to("삭제", board_path(@board), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
+        </div>
+        <% end %>
       </div>
-      <div class="panel-body">
-        <%= raw @board.content  %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body" id="comment">
+            <%= render 'freeboard_comment/index' %>
+            <%= render 'freeboard_comment/new' %>
+          </div>
+        </div>
       </div>
     </div>
-    <% if current_user.id == @board.user_id %>
-    <div class="pull-right">
-      <%= link_to("Edit", edit_board_path(@board), class: "btn btn-default") %>
-      <%= link_to("삭제", board_path(@board), class: "btn btn-default", method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' }) %>
-    </div>
-    <% end %>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-body" id="comment">
-        <%= render 'freeboard_comment/index' %>
-        <%= render 'freeboard_comment/new' %>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div style="padding:90px;"> </div>
